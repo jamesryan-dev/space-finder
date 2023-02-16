@@ -1,0 +1,28 @@
+{
+  "name": "space-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesryan-dev/space-finder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesryan-dev/space-finder/issues"
+  },
+  "homepage": "https://github.com/jamesryan-dev/space-finder#readme",
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "aws-cdk": "^2.65.0",
+    "aws-cdk-lib": "^2.65.0",
+    "constructs": "^10.1.252",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}
