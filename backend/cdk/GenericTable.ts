@@ -19,6 +19,7 @@ export class GenericTable {
     private initialize(){
         this.createTable();
     }
+    
     private createTable(){
         this.table = new Table(this.stack, this.name, {
             partitionKey: {
