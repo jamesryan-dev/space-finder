@@ -3,3 +3,13 @@
 
 GET {{endpoint}}/hello/
 ###
+
+POST {{endpoint}}/spaces/
+Content-Type: application/json
+    
+    {
+        "name": "London Space",
+        "description": "My Space Description",
+        "location": "London"
+    }
+###

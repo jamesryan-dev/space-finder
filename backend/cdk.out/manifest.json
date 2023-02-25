@@ -17,7 +17,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/24358b227963beb6f1aceec477edc39173353af78c9c133300ede51ec716dcc0.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe367a835d6e0f611d5711cfda733ba49c7dff951dad353d3d471a28ca7f6748.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -55,7 +55,7 @@
         "/Space-finder/spaceApi/Deployment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "spaceApiDeployment14AE486E41f2153ab50738272405b8a6a0b2b872"
+            "data": "spaceApiDeployment14AE486E50f02d07c12794c09107ec5b08ab0509"
           }
         ],
         "/Space-finder/spaceApi/DeploymentStage.prod/Resource": [
@@ -94,6 +94,30 @@
             "data": "spaceApihelloGETF98803F9"
           }
         ],
+        "/Space-finder/spaceApi/Default/spaces/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "spaceApispaces273A11C7"
+          }
+        ],
+        "/Space-finder/spaceApi/Default/spaces/POST/ApiPermission.SpacefinderspaceApi7E756CF7.POST..spaces": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "spaceApispacesPOSTApiPermissionSpacefinderspaceApi7E756CF7POSTspaces770A5A8F"
+          }
+        ],
+        "/Space-finder/spaceApi/Default/spaces/POST/ApiPermission.Test.SpacefinderspaceApi7E756CF7.POST..spaces": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "spaceApispacesPOSTApiPermissionTestSpacefinderspaceApi7E756CF7POSTspaces1B7F5833"
+          }
+        ],
+        "/Space-finder/spaceApi/Default/spaces/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "spaceApispacesPOST35BAC724"
+          }
+        ],
         "/Space-finder/SpacesTable": [
           {
             "type": "aws:cdk:hasPhysicalName",
@@ -106,6 +130,24 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "SpacesTable8A997355"
+          }
+        ],
+        "/Space-finder/SpacesTableCreate/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpacesTableCreateServiceRole054A888E"
+          }
+        ],
+        "/Space-finder/SpacesTableCreate/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpacesTableCreateServiceRoleDefaultPolicy895E5CB7"
+          }
+        ],
+        "/Space-finder/SpacesTableCreate/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpacesTableCreate463F0A77"
           }
         ],
         "/Space-finder/helloLambdaNodeJs/ServiceRole/Resource": [
