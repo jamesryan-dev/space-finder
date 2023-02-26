@@ -1,12 +1,16 @@
 // import { handler } from '../../services/node-lambda/hello';
-import { handler  } from '../../services/SpacesTable/Create';
+import { APIGatewayProxyEvent } from "aws-lambda";
+import { handler } from "../../services/SpacesTable/Read";
 
 // handler({}, {});
 
-const event = {
-    body: {
-        location: 'Paris'
-    }
-}
+const event: APIGatewayProxyEvent = {
+  queryStringParameters: {
+    location: "London",
+  },
+} as any;
 
-handler(event as any, {} as any);
+const result = handler(event as any, {} as any).then((apiResult) => {
+  const items = JSON.parse(apiResult.body);
+  console.log("items", items);
+});
