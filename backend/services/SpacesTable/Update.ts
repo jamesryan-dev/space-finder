@@ -4,6 +4,7 @@ import {
   APIGatewayProxyResult,
   Context,
 } from "aws-lambda";
+import { getEventBody } from "../Shared/Utils";
 
 const TABLE_NAME = process.env.TABLE_NAME as string;
 const PRIMARY_KEY = process.env.PRIMARY_KEY as string;
@@ -18,32 +19,38 @@ async function handler(
     body: "Hello from DYnamoDb",
   };
 
-  const requestBody =
-    typeof event.body == "object" ? event.body : JSON.parse(event.body);
-  const spaceId = event.queryStringParameters?.[PRIMARY_KEY];
+  try {
+    const requestBody = getEventBody(event);
+    const spaceId = event.queryStringParameters?.[PRIMARY_KEY];
 
-  if (requestBody && spaceId) {
-    const requestBodyKey = Object.keys(requestBody)[0];
-    const requestBodyValue = requestBody[requestBodyKey];
+    if (requestBody && spaceId) {
+      const requestBodyKey = Object.keys(requestBody)[0];
+      const requestBodyValue = requestBody[requestBodyKey];
 
-    const updatedResult = await dbClient
-      .update({
-        TableName: TABLE_NAME,
-        Key: {
-          [PRIMARY_KEY]: spaceId,
-        },
-        UpdateExpression: `set #name = :value`,
-        ExpressionAttributeNames: {
-          "#name": requestBodyKey,
-        },
-        ExpressionAttributeValues: {
-          ":value": requestBodyValue,
-        },
-        ReturnValues: "UPDATED_NEW",
-      })
-      .promise();
+      const updatedResult = await dbClient
+        .update({
+          TableName: TABLE_NAME,
+          Key: {
+            [PRIMARY_KEY]: spaceId,
+          },
+          UpdateExpression: `set #name = :value`,
+          ExpressionAttributeNames: {
+            "#name": requestBodyKey,
+          },
+          ExpressionAttributeValues: {
+            ":value": requestBodyValue,
+          },
+          ReturnValues: "UPDATED_NEW",
+        })
+        .promise();
 
-    result.body = JSON.stringify(updatedResult);
+      result.body = JSON.stringify(updatedResult);
+    }
+  } catch (err: unknown) {
+    console.error("error", err);
+    if (err instanceof Error) {
+      result.body = err.message;
+    }
   }
 
   return result;

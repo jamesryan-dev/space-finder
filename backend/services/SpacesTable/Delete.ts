@@ -18,18 +18,25 @@ async function handler(
     body: "Hello from DYnamoDb",
   };
 
-  const spaceId = event.queryStringParameters?.[PRIMARY_KEY];
+  try {
+    const spaceId = event.queryStringParameters?.[PRIMARY_KEY];
 
-  if (spaceId) {
-    const deleteResult = await dbClient
-      .delete({
-        TableName: TABLE_NAME,
-        Key: {
-          [PRIMARY_KEY]: spaceId,
-        },
-      })
-      .promise();
-    result.body = JSON.stringify(deleteResult);
+    if (spaceId) {
+      const deleteResult = await dbClient
+        .delete({
+          TableName: TABLE_NAME,
+          Key: {
+            [PRIMARY_KEY]: spaceId,
+          },
+        })
+        .promise();
+      result.body = JSON.stringify(deleteResult);
+    }
+  } catch (err: unknown) {
+    console.error("error", err);
+    if (err instanceof Error) {
+      result.body = err.message;
+    }
   }
 
   return result;

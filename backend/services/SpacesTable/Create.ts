@@ -4,11 +4,11 @@ import {
   APIGatewayProxyResult,
   Context,
 } from "aws-lambda";
-import { v4 } from "uuid";
 import {
   missingFieldError,
   validateAsSpaceEntry,
 } from "../Shared/InputValidator";
+import { generateRandomId, getEventBody } from "../Shared/Utils";
 
 const TABLE_NAME = process.env.TABLE_NAME;
 const dbClient = new DynamoDB.DocumentClient();
@@ -23,9 +23,8 @@ async function handler(
   };
 
   try {
-    const item =
-      typeof event.body == "object" ? event.body : JSON.parse(event.body);
-    item.spaceId = v4();
+    const item = getEventBody(event);
+    item.spaceId = generateRandomId();
 
     validateAsSpaceEntry(item);
 

@@ -36,8 +36,11 @@ async function handler(
     } else {
       result.body = await scanTable();
     }
-  } catch (error) {
-    console.log("error", error);
+  } catch (err: unknown) {
+    console.error("error", err);
+    if (err instanceof Error) {
+      result.body = err.message;
+    }
   }
 
   return result;
