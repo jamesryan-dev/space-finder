@@ -17,7 +17,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/517e46eca206b85b880769cda6074bbb931b6ca7df6979f3bcf56c68defc7a93.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0ef40f0c870811df4d6fdedaacff42bfb6c5c0c873189c7c202df538ec2d35f2.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -286,6 +286,48 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "SpaceUserAuthorizer401AE1AA"
+          }
+        ],
+        "/Space-finder/SpaceFinderIdentityPool": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceFinderIdentityPool"
+          }
+        ],
+        "/Space-finder/IdentityPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IdentityPoolId"
+          }
+        ],
+        "/Space-finder/CognitoDefaultAuthenticatedRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CognitoDefaultAuthenticatedRoleC5D5C31E"
+          }
+        ],
+        "/Space-finder/CognitoDefaultUnAuthenticatedRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CognitoDefaultUnAuthenticatedRole6CA311FD"
+          }
+        ],
+        "/Space-finder/CogntioAdminRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CogntioAdminRoleA1F555D7"
+          }
+        ],
+        "/Space-finder/CogntioAdminRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CogntioAdminRoleDefaultPolicyED07967F"
+          }
+        ],
+        "/Space-finder/RolesAttachment": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RolesAttachment"
           }
         ],
         "/Space-finder/admins": [
