@@ -17,7 +17,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ee51d341f92eab4e2f12da66c62f3cfb76e8f9dbf9949afc59799cd9830ebd6e.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/05d640eff4a94408df73016cd0f249d2086032bc26f49436644897aee734ec0b.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -55,7 +55,7 @@
         "/Space-finder/spaceApi/Deployment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "spaceApiDeployment14AE486Ec0304478e2567161ab71b95263b20cff"
+            "data": "spaceApiDeployment14AE486E47693b60b3415cccc42a3a5f78dedd55"
           }
         ],
         "/Space-finder/spaceApi/DeploymentStage.prod/Resource": [
@@ -256,6 +256,36 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "SpacesTableDelete0C4DCA45"
+          }
+        ],
+        "/Space-finder/SpaceUserPool/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceUserPool6AB542DC"
+          }
+        ],
+        "/Space-finder/SpaceUserPool/SpaceUserPool-Client/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceUserPoolSpaceUserPoolClientEBC7CB7E"
+          }
+        ],
+        "/Space-finder/UserPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPoolId"
+          }
+        ],
+        "/Space-finder/UserPoolClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPoolClientId"
+          }
+        ],
+        "/Space-finder/SpaceUserAuthorizer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SpaceUserAuthorizer401AE1AA"
           }
         ],
         "/Space-finder/helloLambdaNodeJs/ServiceRole/Resource": [

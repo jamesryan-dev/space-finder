@@ -12,3 +12,7 @@ node_modules
 
 # Ignore SASS config files
 .sass-cache
+
+backend/tests/Auth/config.ts
+backend/requests.http
+cdk.out
