@@ -2021,6 +2021,23 @@
               "version": "2.65.0"
             }
           },
+          "admins": {
+            "id": "admins",
+            "path": "Space-finder/admins",
+            "attributes": {
+              "aws:cdk:cloudformation:type": "AWS::Cognito::UserPoolGroup",
+              "aws:cdk:cloudformation:props": {
+                "userPoolId": {
+                  "Ref": "SpaceUserPool6AB542DC"
+                },
+                "groupName": "admins"
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_cognito.CfnUserPoolGroup",
+              "version": "2.65.0"
+            }
+          },
           "helloLambdaNodeJs": {
             "id": "helloLambdaNodeJs",
             "path": "Space-finder/helloLambdaNodeJs",
@@ -2157,7 +2174,7 @@
                       "s3Bucket": {
                         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                       },
-                      "s3Key": "959233e68c77e83e8cfca8d9a6b7ff549cbf016c742c8b4531d481788e01d20c.zip"
+                      "s3Key": "8780e3b46ddff734cc99caac2e15e9800cdce5a66c5d3ea7d0df2e2fd4673db2.zip"
                     },
                     "role": {
                       "Fn::GetAtt": [
